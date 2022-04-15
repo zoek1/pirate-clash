@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "casper-cep47-js-client": "^1.0.1"
+  }
+}
