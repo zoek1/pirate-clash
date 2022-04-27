@@ -1,16 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Phaser 3 TypeScript Starter</title>
-    <meta charset="utf-8" />
-    <style>
-      body {
-        margin: 0;
-      }
+<html>
+<head>
+    <title>Revenge</title>
+    <link rel="preload" as="font" href="assets/bullpen-3d/Bullpen3D.ttf" type="font/ttf" />
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+        @font-face{
+            font-family:Bullpen3D;
+            src: url('assets/bullpen-3d/Bullpen3D.ttf');
+        }
     </style>
-    <script type="module" src="/src/index.js"></script>
-  </head>
-  <body>
-    <div id="game"></div>
-  </body>
+</head>
+<body>
+
+    <!-- <script>
+    var config = {
+        type: Phaser.AUTO,
+        width: 1520,
+        height: 685,
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: { y: 300 },
+                debug: true
+            }
+        },
+        scene: {
+            preload: preload,
+            create: create,
+            update: update
+        }
+    };
+
+    var pirate;
+    var pirate2;
+    var game = new Phaser.Game(config);
+
+    function preload ()
+    {
+        this.load.spritesheet('canonpurplebreathingmodified','assets/canon/purple/canonpurplebreathingmodified.png',{frameWidth: 491, frameHeight: 400});
+        this.load.spritesheet('canonpurplehurtmodified','assets/canon/purple/canonpurplehurtmodified.png',{frameWidth: 491, frameHeight: 400});
+        this.load.spritesheet('pirategreenbreathingmodified','assets/gun/green/pirategreenbreathingmodified.png',{frameWidth: 469, frameHeight: 420});
+    }
+
+    function create ()
+    {
+       pirate=this.physics.add.sprite(600,450,'canonpurplebreathingmodified').setScale(.5);
+       pirate.setCollideWorldBounds(true);
+       pirate.setSize(130,180,true);
+       pirate.setOffset(180,190);
+
+       pirate2=this.physics.add.sprite(300,450,'pirategreenbreathingmodified').setScale(.48);
+       pirate2.setCollideWorldBounds(true);
+       pirate2.setSize(130,180,true);
+       pirate2.setOffset(150,160);
+       
+       this.anims.create({
+        key:'breathing',
+        frames:this.anims.generateFrameNumbers('canonpurplebreathingmodified',{start:0 , end:19}),
+        frameRate: 15,
+        yoyo:true,
+        repeat:-1
+       });
+
+       this.anims.create({
+        key:'breathing2',
+        frames:this.anims.generateFrameNumbers('pirategreenbreathingmodified',{start:0 , end:18}),
+        frameRate: 15,
+        yoyo:true,
+        repeat:-1
+       });
+
+       this.anims.create({
+        key:'hurt',
+        frames:this.anims.generateFrameNumbers('canonpurplehurtmodified',{start:0 , end:4}),
+        frameRate: 4,
+        yoyo:true,
+        repeat:1
+       })
+
+    }
+
+    function update(){
+        pirate.anims.play('breathing',true);
+        pirate2.anims.play('breathing2',true);
+    }
+    </script> -->
+<div style="font-family:'Bullpen3D'; display: none;"></div>
+<script src="index.ts" type="module"></script>
+</body>
 </html>
